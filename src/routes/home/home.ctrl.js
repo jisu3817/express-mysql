@@ -1,6 +1,5 @@
 "use strict";
 
-let db = require("../../config/db");
 const User = require("../../models/User");
 
 const output = {
@@ -23,18 +22,18 @@ const output = {
 }
 
 const process = {
-    login: (req, res) => {
-        const client = req.body;
+    login: async (req, res) => {
         const user = new User(req.body);
-        const response = user.login();
+        const client = req.body;
+        const response = await user.login();
+        
         if (client.rememberId === "checked") {
             res.cookie('loginId', client.id);
             console.log("아이디 저장!");
-            console.log(req.cookies);
             response.userId = client.id;
         };
         console.log(response);
-        return res.json(response);
+        return res.status(200).json(response);
     }
 }
 

@@ -1,11 +1,14 @@
-class userStorage {
-    static #users = {
-        id: ["김지수", "지수", "jisu"],
-        psword: ["1234", "123", "12345"],
-    };
+const  db = require("../config/db");
 
-    static getUsers() {
-        return this.#users;
+class userStorage {
+    static getUsers(id) {
+        return new Promise((resolve, reject) => {
+            db.query("SELECT * FROM users WHERE id = ?", [id], (err, data) => {
+                if (err) reject(err);
+                console.log(data);
+                resolve(data[0]);
+            })
+        })
     }
 }
 
