@@ -1,12 +1,12 @@
 ## MySQL-Node.js 연동
 
-**모듈**: [mysql](https://github.com/felixge/node-mysql/) **설치**
+- **모듈**: [mysql](https://github.com/felixge/node-mysql/) **설치**
 
 ```bash
 $ npm install mysql
 ```
 
-**예제**
+- **예제**
 
 ```jsx
 var mysql      = require('mysql');
