@@ -1,4 +1,4 @@
-## MySQL-Node.js 연동
+## MySQL과 Node.js 연동
 
 - **모듈**: [mysql](https://github.com/felixge/node-mysql/) **설치**
 
